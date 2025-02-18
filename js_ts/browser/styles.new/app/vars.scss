@@ -1,0 +1,33 @@
+@import "./includes";
+
+$navHeight: 50px;
+$itemPadding: 15px;
+$itemPaddingMobile: 10px;
+$defaultRadius: 4px;
+
+$colorLink: #90c3d4;
+
+$font: "Icarus"; //'Maven Pro', 'Open Sans', sans-serif;
+$fontBold: "Mario"; //"Maven Pro Bold", "Open Sans Bold", sans-serif;
+$fontBaseSize: 20px;
+$fontColor: #123;
+
+/* Gradients */
+$gradientAngle: -30deg;
+$colorBackground: linear-gradient($gradientAngle, #0093e9 0%, #80d0c7 100%);
+$colorBackground: linear-gradient($gradientAngle, #0093e9 0%, #80d0c7 100%);
+$colorBackground: linear-gradient($gradientAngle, #1f4037 0%, #1f4037 100%);
+$colorBackground: linear-gradient($gradientAngle, #1f4037 0%, #99f2c8 100%);
+
+$colorBackground: linear-gradient($gradientAngle, #141e20 0%, #242b35 100%);
+$colorBackground: linear-gradient($gradientAngle, #2f5047 0%, #99f2c8 100%);
+$colorBackground2: linear-gradient($gradientAngle, #141e30 0%, #243b55 100%);
+
+// COOL LIGHT:
+$colorBackground: linear-gradient($gradientAngle, #111827 0%, rgba(17, 24, 39, 0) 100%);
+
+// COOL DARK:
+$colorBackgroundDark: linear-gradient($gradientAngle, #111827 0%, rgb(17, 24, 39) 100%);
+
+// OR WHITE:
+//$colorBackground: none;

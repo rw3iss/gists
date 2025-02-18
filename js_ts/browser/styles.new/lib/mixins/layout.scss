@@ -1,0 +1,275 @@
+// Breakpoint helpers (follows material guidelines https://material-ui.com/customization/breakpoints/)
+$fontScaler: 1.15;
+
+@mixin view-xs() {
+    @media all and (max-width: 599px) {
+        @content;
+    }
+}
+
+@mixin view-sm() {
+    @media all and (max-width: 959px) {
+        @content;
+    }
+}
+
+@mixin view-md() {
+    @media all and (max-width: 1279px) {
+        @content;
+    }
+}
+
+@mixin view-lg() {
+    @media all and (max-width: 1919px) {
+        @content;
+    }
+}
+
+@mixin view-xl() {
+    @media all and (min-width: 1920px) {
+        @content;
+    }
+}
+
+// Padding mixins ----------------------------
+
+@mixin pad-xs {
+    padding: calc(var(--font-default) * #{$fontScaler}* 7) 0;
+}
+
+@mixin pad-sm {
+    padding: calc(var(--font-default) * #{$fontScaler}* 0.85) 0;
+}
+
+@mixin pad-md {
+    padding: calc(var(--font-default) * #{$fontScaler}* 1) 0;
+}
+
+@mixin pad-lg {
+    padding: calc(var(--font-default) * #{$fontScaler}* 1.5) 0;
+}
+
+@mixin pad-xl {
+    padding: calc(var(--font-default) * #{$fontScaler}* 2) 0;
+}
+
+// Margin mixins ----------------------------
+
+@mixin space-xs {
+    margin: calc(var(--font-default) * #{$fontScaler}* 7) 0;
+}
+
+@mixin space-sm {
+    margin: calc(var(--font-default) * #{$fontScaler}* 0.85) 0;
+}
+
+@mixin space-md {
+    margin: calc(var(--font-default) * #{$fontScaler}* 1) 0;
+}
+
+@mixin space-lg {
+    margin: calc(var(--font-default) * #{$fontScaler}* 1.5) 0;
+}
+
+@mixin space-xl {
+    margin: calc(var(--font-default) * #{$fontScaler}* 2) 0;
+}
+
+// utility to space apart horizontal items.
+@mixin space-h($margin: 5px, $incFirst: false, $incLast: false) {
+    margin: 0 $margin;
+
+    @if $incFirst == false {
+        &:first-child {
+            margin-left: 0;
+        }
+    }
+
+    @if $incLast == false {
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+// utility to space apart vertical items.
+@mixin space-v($margin: 5px, $incFirst: false, $incLast: false) {
+    margin: $margin 0;
+
+    @if $incFirst == false {
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    @if $incLast == false {
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// Flex shortcuts -------------------------------------------------------------
+
+@mixin flex {
+    display: flex;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -ms-flexbox;
+    display: -o-flex;
+}
+
+// Row
+
+@mixin flex() {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-row() {
+    @include flex;
+}
+
+@mixin flex-wrap() {
+    @include flex();
+    flex-wrap: wrap;
+}
+
+@mixin flex-no-wrap {
+    @include flex();
+    flex-wrap: nowrap;
+}
+
+@mixin flex-center-x {
+    @include flex();
+    justify-content: center;
+}
+
+@mixin flex-center-y {
+    @include flex();
+    align-items: center;
+}
+
+@mixin flex-row-no-wrap {
+    @include flex-no-wrap();
+}
+
+@mixin flex-row-center-x {
+    // alias
+    @include flex();
+    justify-content: center;
+}
+
+@mixin flex-row-center-y {
+    // alias
+    @include flex();
+    align-items: center;
+}
+
+@mixin flex-center-both {
+    @include flex();
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-row-center-both {
+    @include flex-center-both;
+}
+
+// Column
+
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-col-center {
+    // assumes x-axis center
+    @include flex-col();
+    align-items: center;
+}
+
+@mixin flex-col-center-x {
+    @include flex-col();
+    align-items: center;
+}
+
+@mixin flex-col-center-y {
+    @include flex-col();
+    justify-content: center;
+}
+
+@mixin flex-col-center-both {
+    @include flex-center-both;
+    flex-direction: column;
+}
+
+@mixin flex-col-fill-center-both {
+    @include flex-col-center-both;
+    flex: 1 0 auto;
+}
+
+@mixin flex-col-100-center-both {
+    @include flex-col-center-both;
+    flex: 1 0 100%;
+}
+
+// force container to 100% grow
+
+@mixin flex-fill {
+    @include flex;
+    flex: 1 0 auto;
+}
+
+// @mixin flex-fill-all {
+//     @include flex;
+//     width: 100%;
+// 	flex: 1 0 100%;
+// }
+
+@mixin flex-row-fill {
+    @include flex;
+    width: 100%;
+    flex: 1 0 100%;
+}
+
+// force container to 100% grow
+@mixin flex-col-fill {
+    @include flex-col;
+    //width: 100%;
+    //height: 100%;
+    flex: 1 0 auto;
+}
+
+@mixin flex-col-100 {
+    @include flex-col;
+    flex: 1 0 100%;
+    height: 100%;
+}
+@mixin flex-col-fill-100 {
+    @include flex-col-100;
+}
+
+@mixin flex-end {
+    align-self: flex-end;
+    margin: 0 0 0 auto;
+}
+
+@mixin flex-inline {
+    display: inline-flex;
+}
+
+// @mixin flex($axis: 'row', $align: 'flex-start', $justify: 'flex-start', $flex: 'auto') {
+//     display: flex;
+//     flex-direction: $axis;
+//     align-items: $align;
+//     justify-content: $justify;
+//     flex: $flex;
+// }
+
+@mixin dark-mode {
+    @media (prefers-dark-interface) {
+        @content;
+    }
+}

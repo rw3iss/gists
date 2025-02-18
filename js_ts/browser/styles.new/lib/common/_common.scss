@@ -1,0 +1,67 @@
+$btnPadding: .7em 1.1em;
+
+.btn { 
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 200px;
+	height: 45px;
+	min-height: 45px;
+	padding: $btnPadding;
+	color: white;
+	font-size: 1em;
+	font-weight: bold;
+	letter-spacing: 1px;
+    text-align: center;
+	text-transform: uppercase;
+    vertical-align: middle;
+    cursor: pointer;
+	border-radius: .444em;
+    margin-bottom: 0;
+	box-shadow: 0px 0px 0px rgba(0,0,0,.5);
+	transition: all .3s ease;
+
+	&.small {
+		height: 35px;
+		min-height: 35px;
+		font-size: 1em;
+	}
+
+    &:hover {
+    	box-shadow: 0px 2px 6px rgba(0,0,0,.5);
+    }
+}
+
+/* inline background image */
+.bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	img, picture {
+		min-width: 100%;
+		object-fit: cover;
+	}
+}
+
+.clear {
+	&:before {
+	    content: "";
+	    display: table;
+	}
+
+	&:after {
+  		content: "";
+		display: table;
+		clear: both;
+	}
+}

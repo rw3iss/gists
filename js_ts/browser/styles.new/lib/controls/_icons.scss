@@ -1,0 +1,23 @@
+$iconWidth: 24px;
+
+.icon {
+    @include flex-center-x;
+    width: $iconWidth;
+    min-width: $iconWidth;
+    color: white;
+
+    &.dark {
+        color: black;
+    }
+
+    &.large {
+        width: calc(#{$iconWidth} * 2);
+        min-width: calc(#{$iconWidth} * 2);
+    }
+
+    &.x-large {
+        width: calc(#{$iconWidth} * 3);
+        min-width: calc(#{$iconWidth} * 3);
+    }
+
+}

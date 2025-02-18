@@ -1,0 +1,86 @@
+@import "src/styles/app/vars.scss";
+
+.page {
+    flex: 1;
+    @include flex-col;
+    max-width: 100%;
+    padding-top: $itemPadding * 4;
+    color: var(--color-text);
+
+    h1 {
+        padding: $itemPadding * 2 0 0 $itemPadding * 2;
+        font-size: 2em;
+        font-weight: bold;
+        text-shadow: 1px 1px 3px #000;
+        font-family: $fontBold;
+        color: var(--color-header);
+    }
+
+    h3 {
+        color: var(--color-subheader);
+    }
+
+    .line-title {
+        width: 100%;
+        padding: $itemPadding $itemPadding * 2 0;
+
+        h3 {
+            padding-bottom: 5px;
+            width: 100%;
+            border-bottom: 1px solid white;
+            color: #fff;
+        }
+    }
+
+    .items {
+        max-width: 100%;
+        padding: $itemPadding;
+
+        .item {
+            max-width: 100%;
+        }
+
+        &.col-2 {
+            .item {
+                width: 50%;
+                min-width: 50%;
+                max-width: 50%;
+                height: 200px;
+
+                &.open {
+                    height: 400px;
+                }
+            }
+        }
+    }
+}
+
+@media all and (max-width: 1023px) {
+    .page {
+        h1 {
+            padding: $itemPadding * 2 0 0 0;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
+
+@media all and (max-width: 767px) {
+    .page {
+        max-width: 100%;
+
+        .items {
+            max-width: 100%;
+            padding: 0;
+        }
+
+        .line-title {
+            width: 100%;
+            padding: $itemPadding $itemPadding 0;
+
+            h3 {
+                text-align: center;
+            }
+        }
+    }
+}

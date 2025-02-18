@@ -1,0 +1,28 @@
+@import "src/styles/includes";
+
+input,
+textarea,
+select {
+    @include input();
+
+    &:hover {
+        @include input-hover();
+    }
+
+    &.light {
+        //color: var(--input-color);
+    }
+
+    &.small,
+    &.size-small {
+        font-size: 0.85rem;
+        padding: 5px 7px;
+        min-height: calc(var(--defaultButtonHeight) * 0.75);
+    }
+
+    &.large,
+    &.size-large {
+        font-size: 1.25rem;
+        min-height: calc(var(--defaultButtonHeight) * 1.25);
+    }
+}

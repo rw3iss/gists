@@ -1,0 +1,189 @@
+// header text
+
+@mixin header {
+    font-weight: bold;
+    //@at-root: .5rem 0;
+}
+
+@mixin h1 {
+    @include header;
+    font-size: 2.25rem;
+}
+
+@mixin h2 {
+    @include header;
+    font-size: 2rem;
+}
+
+@mixin h3 {
+    @include header;
+    font-size: 1.75rem;
+}
+
+@mixin h4 {
+    @include header;
+    font-size: 1.5rem;
+}
+
+@mixin h5 {
+    @include header;
+    font-size: 1.25rem;
+}
+
+@mixin h6 {
+    @include header;
+    font-size: 1.15rem;
+}
+
+// regular text
+
+@mixin t1 {
+    font-size: 1em;
+}
+
+@mixin t2 {
+    font-size: 1.25rem;
+}
+
+@mixin t3 {
+    font-size: 1.5rem;
+}
+
+@mixin t4 {
+    font-size: 1.75rem;
+}
+
+@mixin t5 {
+    font-size: 2rem;
+}
+
+@mixin t6 {
+    font-size: 2.25rem;
+}
+
+@mixin t7 {
+    font-size: 2.5rem;
+}
+
+@mixin t8 {
+    font-size: 2.75rem;
+}
+
+@mixin t9 {
+    font-size: 3rem;
+}
+
+// sub-text
+
+@mixin s1 {
+    font-size: 1em;
+}
+
+@mixin s2 {
+    font-size: 1.25rem;
+}
+
+@mixin s3 {
+    font-size: 1.5rem;
+}
+
+@mixin s4 {
+    font-size: 1.75rem;
+}
+
+@mixin s5 {
+    font-size: 2rem;
+}
+
+// misc
+
+@mixin text-gradient($angle: 45deg, $colorFrom: #111, $colorTo: #558) {
+    background: -webkit-linear-gradient($angle, $colorFrom, $colorTo);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/// CLEANUP: ////////////////////////////
+
+@mixin font-avenir {
+    font-family: "Avenir Light";
+}
+
+// Todo: eventually break these out into separate files when big enough.
+
+@mixin input-simple {
+    @include font-input;
+}
+
+@mixin number-font {
+    font-family: var(--font-bold-default);
+    color: white;
+}
+
+@mixin header-mono {
+    font-family: var(--font-default);
+    letter-spacing: 10px;
+
+    @include mobile {
+        letter-spacing: 7px;
+    }
+}
+
+@mixin header-font {
+    font-family: var(--font-default);
+}
+
+@mixin header-font-bold {
+    font-family: var(--font-bold-default);
+}
+
+@mixin graph-header {
+    @include header-font;
+    @include flex-col;
+    @include t6;
+    color: white;
+    text-transform: uppercase;
+    line-height: 2.25rem;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
+}
+
+@mixin section-header {
+    $height: 4rem;
+    @include flex-center-y;
+    font-family: "Open Sans Condensed Light";
+    font-family: var(--font-default);
+    font-weight: 900;
+    font-size: 1.25rem;
+    line-height: 1.25em;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.45);
+    color: var(--color-blue-light);
+    padding: calc(var(--default-gutter) * 0.4) var(--default-gutter) calc(var(--default-gutter) * 0.15); // var(--default-gutter) calc(var(--default-gutter) * 1.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.015);
+    background: linear-gradient(180deg, rgba(51, 98, 109, 0.425) 0%, rgba(19, 35, 75, 0.579) 100%);
+    //@include after-shadow(0, $height, 10px);
+}
+
+@mixin section-header-large {
+    @include section-header;
+    font-size: 2.5rem;
+}
+
+@mixin section-content {
+    font-family: var(--font-default);
+    font-size: 1rem;
+    line-height: 1.25em;
+    padding: var(--default-gutter);
+}
+
+@mixin num-io-label {
+    font-size: clamp(0.75rem, 0.25vw, 2rem);
+    font-family: var(--font-bold-default);
+    font-weight: 100;
+
+    @include mobile {
+        //font-size: clamp(.75rem, .85vw, 2rem);
+        font-size: clamp(0.65rem, 0.5vw, 1.5rem);
+    }
+}

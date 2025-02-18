@@ -1,0 +1,139 @@
+@mixin input() {
+    @include font-input;
+    @include flex-row-center-y;
+    border: none;
+    border-radius: var(--input-radius);
+    background: var(--input-background);
+    padding: var(--input-padding);
+    font-size: var(--input-font-size);
+    color: var(--input-color);
+    background: var(--input-background);
+    box-shadow: var(--input-shadow); // inset 1px 1px 3px rgba(0, 0, 0, 0.7);
+    border: none;
+    border-radius: var(--input-radius);
+    outline: none;
+}
+
+@mixin input-hover() {
+    @include input();
+}
+
+@mixin input-focus() {
+    @include input-hover();
+}
+// New Menu
+
+@mixin font-open-sans {
+    font-family: "Open Sans";
+}
+
+@mixin font-open-sans-bold {
+    font-family: "Open Sans Bold";
+}
+
+// FONT / TEXT ////////////////////
+
+@mixin font-plain($size: var(--font-size-default)) {
+    font-family: var(--font-default);
+    font-size: $size;
+    line-height: 1.1em;
+    font-weight: 500;
+}
+
+$btnFontPadFix: 0.5em;
+@mixin font-label {
+    @include font-plain(0.85rem);
+    line-height: 1em;
+    font-weight: 200;
+    letter-spacing: 1px;
+    //text-transform: uppercase;
+}
+
+@mixin font-label-light {
+    @include font-label;
+    font-weight: 200;
+}
+
+@mixin font-input-label {
+    @include font-label;
+}
+
+@mixin font-input {
+    @include font-plain(var(--font-size-input));
+    font-family: var(--font-input);
+    font-weight: 700;
+    //padding-bottom: 0.65em;
+}
+
+@mixin font-bold {
+    @include font-plain();
+    font-weight: 900;
+}
+
+@mixin font-condensed {
+    @include font-plain();
+}
+
+@mixin font-condensed-light {
+    @include font-plain();
+    font-weight: 200;
+}
+
+@mixin font-mono {
+    @include font-plain();
+}
+
+////////////////////////////////////////
+// Non-basic font styles:
+
+@mixin font-condensed-header {
+    @include font-condensed-light;
+    font-size: 1.35rem;
+    line-height: 1em;
+    font-weight: 100;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+@mixin font-button {
+    @include font-label();
+    font-family: var(--button-font);
+    font-size: var(--button-font-size);
+}
+
+@mixin font-button-bold {
+    @include font-label();
+    font-family: var(--button-font);
+    font-size: var(--button-font-size);
+    font-weight: 900;
+}
+
+/////////////////////////////////
+
+@mixin font-small {
+    font-family: var(--font-default);
+    font-size: 1rem;
+    line-height: 1em;
+    font-weight: 500;
+}
+
+@mixin font-medium {
+    @include font-plain(1.175rem);
+}
+
+@mixin font-large {
+    @include font-plain(1.6875rem);
+}
+
+@mixin font-xlarge {
+    @include font-plain(2.25rem);
+}
+
+@mixin font-error($bg: "light") {
+    @include font-plain(1rem);
+    color: var(--color-error);
+
+    @if $bg == "dark" {
+        color: var(--color-error-dark);
+    }
+}

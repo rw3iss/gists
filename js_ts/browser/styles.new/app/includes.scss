@@ -1,0 +1,31 @@
+$colors: (
+    "blue": #005596,
+    "blue-variant": #005596,
+    "blue-dark": #041f41,
+    "blue-dark-variant": #001937,
+    "blue-lighter": #e5f2fc,
+    "blue-light": #d6edff,
+    "blue-light-variant": #96cdf8,
+    "blue-bg-transparent": #041f419b,
+    "green": #13f3a1,
+    "green-light": #8fffd2,
+    "grey-1": #0c0c0c,
+    "grey-2": #212121,
+    "grey-3": #282828,
+    "grey-4": #444444,
+    "grey-5": #5e5e5e,
+    "grey-6": #888888,
+    "grey-7": #bcbcbc,
+    "grey-8": #dddddd,
+    "grey-9": #e1e1e1,
+    "white-2": #eeeeee,
+    "gradient-blue-base": rgb(21, 149, 208),
+    "blue-green-gradient":
+        linear-gradient(71deg, rgba(61, 76, 192, 1) 28%, rgba(204, 245, 172, 1) 67%, rgba(164, 245, 199, 1) 100%),
+    "red-dark": rgb(199, 91, 104),
+    "link": #789bb5,
+    "link-hover": lighten(#789bb5, 5%),
+    "link-dark": var(--color-blue-dark)
+);
+
+//@import "./mixins";

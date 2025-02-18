@@ -1,0 +1,80 @@
+.form {
+
+    label {
+        display: block;
+        white-space: nowrap;
+        margin-bottom: 5px;
+        font-size: .9rem;
+        color: var(--color-form-label);
+    }
+
+    .input-row {
+        width: 100%;
+
+        .row {
+            width: 100%;
+        }
+
+        input, select, textarea {
+            width: 100%;
+        }
+
+        .field-error {
+            color: var(--color-error);
+            margin: 4px 0 0 0;
+            font-size: .9rem;
+        }
+    }
+
+    .button-row {
+        width: 100%;
+        @include flex-center-x();
+
+        &.row {
+            @include flex-center-y();
+
+            .button {
+                margin: 0 5px;
+
+                &:first-child {
+                    margin-left: 0;
+                }
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+        }
+
+        &.col {
+            @include flex-col-center-x();
+
+            .button {
+                margin: 5px 0;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    .status {
+        margin: 10px 0;
+        text-align: center;
+
+        &.error {
+            color: var(--color-error);
+        }
+
+        &.success {
+            color: var(--color-success);
+        }
+    }
+
+}

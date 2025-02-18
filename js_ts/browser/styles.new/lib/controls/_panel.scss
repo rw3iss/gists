@@ -1,0 +1,57 @@
+.panel {
+    border-radius: var(--default-radius);
+    margin: 0 auto;
+    overflow: hidden;
+    background: white;
+    box-shadow: 2px 2px 30px rgba(100, 100, 100, 0.9);
+
+    .header {
+        @include flex-center-y();
+        padding: 10px;
+        font-weight: bold;
+        background: rgba(0, 0, 0, 0.2);
+        box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    &.center {
+        margin: 0 auto;
+    }
+
+    &.margin {
+        margin: 20px;
+    }
+
+    &.pad {
+        padding: 20px;
+    }
+
+    .inner {
+        padding: calc(var(--default-item-padding) * 2) var(--default-item-padding);
+    }
+
+    .actions {
+        padding: 10px 20px;
+        @include flex-center-y();
+        background: rgba(0, 0, 0, 0.05);
+
+        .button {
+            margin: 0 5px;
+        }
+    }
+
+    &.full {
+        width: 100%;
+    }
+
+    &.sm {
+        width: 20%;
+    }
+
+    &.md {
+        width: 40%;
+    }
+
+    &.lg {
+        width: 80%;
+    }
+}
